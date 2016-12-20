@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // parse json
+    compile 'com.google.code.gson:gson:2.3'
+    // okhttp
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    // okhttp log controller
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    // image load library
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    // green dao library
+    compile 'org.greenrobot:greendao:2.2.0'
+
+}
